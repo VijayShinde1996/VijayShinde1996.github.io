@@ -1,5 +1,5 @@
-# Vijay Shinde's Portfolio (Accesss Link:- https://vijayshinde1996.github.io/)
-### Hi there I'm Vijay Shinde👋
+# Hi there I'm Vijay Shinde👋
+### See my Portfolio (Accesss Link:- https://vijayshinde1996.github.io/)
 - 🤔 I’m working as a ---> Data Scientist <---
 - 🌱 I’m currently Exploring Generative AI (LLM's)...
 - 🔭 I’m currently working on - ML,NLP,DL (Tensorflow/Pytorch), CVML, Chatbots, Arc GIS and Microsoft Power Platforms (Power App, PBI, Power Automate) Based Projects...
