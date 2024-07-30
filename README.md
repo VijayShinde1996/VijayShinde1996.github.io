@@ -1,4 +1,4 @@
-# vrs_DS_Portfolio
+# Vijay Shinde's Portfolio (Accesss Link:- https://vijayshinde1996.github.io/)
 ### Hi there I'm Vijay Shinde👋
 - 🤔 I’m working as a ---> Data Scientist <---
 - 🌱 I’m currently Exploring Generative AI (LLM's)...
