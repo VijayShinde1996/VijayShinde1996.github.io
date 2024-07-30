@@ -1,5 +1,4 @@
-# Hi there 
-## I'm Vijay Shinde👋
+# Hi there I'm Vijay Shinde👋
 ### See my Portfolio (Accesss Link:- https://vijayshinde1996.github.io/)
 - 🤔 I’m working as a ---> Data Scientist <---
 - 🌱 I’m currently Exploring Generative AI (LLM's)...
