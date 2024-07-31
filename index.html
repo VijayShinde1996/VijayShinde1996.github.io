@@ -83,13 +83,12 @@
 <!--- About Section Details --->
 <div class="summary section">
   <h2 class="section-title">About Me</h2>
-  <p> I have dedicated 4+ years of experience in the core Data Science Industry working with India/US/etc clients, Project domains I'm working on</p>
+  <p> I have dedicated 4+ years of experience in the core Data Science Industry working with various international clients, Project domains I'm working on is </p>
   <p> 1- ML/DL/CVML/NLP/LLM/Gen-AI and R Shiny Projects with End to End Production Deployment on Server and Various Clouds with CI-CD and Front End.</p>
   <p> 2- Microsoft Power Platforms - Power Apps, Power BI, Share Point, Power Automate, Databricks</p>
   <p> 3- Arc GIS Pro - Geo-referencing, Latitude/Longitude, Polygon Generation, Centroidal Grid generation for entity installation optimization, etc.</p>
   <p> 4- Talent Acquisition - Data Science, AI/ML/CVML/Generative AI profiles </p>
-  <p> Processing to Optimize Processes and Improve Accuracy. Eagerly seeking a Data Scientist role to leverage diverse skill </p>
-  <p> sets and drive impactful solutions in data-driven environments.</p>
+  <p> Processing to Optimize Processes and Improve Accuracy. Eagerly seeking a Data Scientist role to leverage diverse skill, sets and drive impactful solutions in data-driven environments.</p>
 </div>
 
 <!--- Technical Skill Details --->
@@ -107,6 +106,7 @@
     <p><b>Web-Scraping & Python Automation:</b> Beautiful Soup, AutoScraper, RegX, Flask based tools</p>
     <p><b>MVC Framework:</b> Python + SQLite3 + Flask </p>
     <p><b>Languages & Databases:</b> SQL & No-SQL, Python, R, Flask, HTML, CSS, JS </p>
+    <p><b>Microsoft Power Pltforms:</b> Power Apps, Power BI, Power Automate, Share Point Site & Lists</p>
     <p><b>Project Management tools:</b> Scrum, Agile, Jira</p>
   </ul>
 </div>
@@ -125,10 +125,16 @@
         <span style="font-size: 1.3em; font-weight: bold; color: gray;">Project 1: Labour Standard & Actual Cycle Time Prediction (ML)</span> 
         <span style="font-size: 1em;">Client: John Deere Maxico, Project Span: 3 Months</span>
     </div>
-    <p><b>Goal:</b> Gol1 details.</p>
-    <p><b>Role:</b> Role1 details.</p>
-    <p><b>Results:</b> Results1 details.</p>
-    <p><b>Business Impact:</b> Business Impact1 details.</p>
+    <p><b>Objective:</b></p>
+    <p>Factory has multiple m/c operations like Bending/Sorting/Painting/etc. (12 usecases), currently there is no any efficent methode to estimate Labour Standard & Actual cycle time for each operation during EPDP</p>
+    <p><b>Role:</b></p>
+    <p>- Extracted input data from Ignition gateways and splitted that huge data into excel files</p>
+    <p>- Performed Data Pre-processing, Data cleaning, feature selection, Data balancing, Exploratory Data Analysis, Visualization Techniques, data Cleansing, Feature Engineering, Feature Scaling, Model Selection/building/Evaluation.</p>
+    <p>- For some models performed Hyper-parameters tunning by utilizing GPU system</p>
+    <p>- Model testing on Rest API (Postman) and then Created & Integrated 12 models in Single UI</p>
+    <p>- Production workflow: User needs to select appropriate model and upload data in bulk and after clicking on Predict he predicted data will get auto-downloaded</p>
+    <p><b>Results:</b> Application Deployed on organization server with overall R2_score of 92% - 99%.  </p>
+    <p><b>Business Impact:</b> Efficiency: 1200 Hrs./Year savings, Cost Avoidance: $27 (Approx), Patented:John Deere Internal.</p>
   </div>
 
 
@@ -136,37 +142,65 @@
     <span style="font-size: 1.3em; font-weight: bold; color: gray;">Project 2: Tractor Chassis Object Detection & Classification (CVML)</span> 
     <span style="font-size: 1em;">Client: John Deere Pune, Project Span: 4 Months</span>
 </div>
-<p><b>Goal:</b> Gol2 details.</p>
-<p><b>Role:</b> Role2 details.</p>
-<p><b>Results:</b> Results2 details.</p>
-<p><b>Business Impact:</b> Business Impact2 details.</p>
+<p><b>Objective:</b></p>
+<p>In Tractor chassis assembly section factory wanted to detect & mask/unmasked 18 small critical components and to ensure the proper masking they currently use VCS in use, 
+  But due to human limitations this check points are getting missed and if it got missed then the rework cost is very huge, so to tackle the same 
+  we have introduced YOLO v8 Object detection CVML model</p>
+<p><b>Role:</b></p>
+<p>- Installed IP cameras at Assembly section, created & recorded the Image data</p>
+<p>- Data Preprocessing & Image labelling using Labelimg tool</p>
+<p>- used pretrained YOLOv8 model and Fine-tunned on our custome dataset by utilizing GPU system</p>
+<p>- Evaluated & tested the model on unseen data</p>
+<p>- Ceated UI that can provide the functionality of (Start/Stop/Capture/ webcam and make prediction) & generated Power BI dashboard & push data to PGAdmin database</p>
+<p><b>Results:</b> Application Deployed on organization server with accuracy of 95%.  </p>
+<p><b>Business Impact:</b> Efficiency: 1800 Hrs./Year savings</p>
 
 <div style="display: flex; justify-content: space-between; align-items: center; color: gray;">
     <span style="font-size: 1.3em; font-weight: bold; color: gray;">Project 3: Engraved Serial Number Detection & Extraction (CVML)</span> 
     <span style="font-size: 1em;">Client: John Deere Pune, Project Span: 4 Months</span>
 </div>
-<p><b>Goal:</b> Gol2 details.</p>
-<p><b>Role:</b> Role2 details.</p>
-<p><b>Results:</b> Results2 details.</p>
-<p><b>Business Impact:</b> Business Impact2 details.</p>
+<p><b>Objective:</b></p>
+<p>Replace manual recording of serial numbers from chassis (using basic technique: Black-page & Pencil) with Python Application that utilizes CVML to automate 
+  text extraction from images captured by webcam & also need to enhance visiability of serial numbers post-engraving process by addressing color corrections & 
+engraving accuracy issues</p>
+<p><b>Role:</b></p>
+<p>- Installed IP cameras at Assembly section, created & recorded the Image data</p>
+<p>- Labelled the images & Fine-tunned the YOLO model on custome data for serial number area detection</p>
+<p>- Evaluated & tested the model on unseen data</p>
+<p>- Extracted Serial number bbox cordinates & done image preprocessing for OCR input</p>
+<p>- Applied Paddle/Easy/Py_doctor/Py_tesseract OCR techniques and extracted text data with confidance score</p>
+<p>- Ceated UI that can provide the functionality to extract Text data by just capturing the camera frame</p>
+<p><b>Results:</b> Application Deployed on organization server with accuracy of 98%.  </p>
+<p><b>Business Impact:</b> Efficiency: 2500 Hrs./Year savings</p>
 
 <div style="display: flex; justify-content: space-between; align-items: center; color: gray;">
     <span style="font-size: 1.3em; font-weight: bold; color: gray;">Project 4: Process Validation Audit Power App (Power Platforms)</span> 
     <span style="font-size: 1em;">Client: John Deere Maxico, Project Span: 2 Months</span>
 </div>
-<p><b>Goal:</b> Gol2 details.</p>
-<p><b>Role:</b> Role2 details.</p>
-<p><b>Results:</b> Results2 details.</p>
-<p><b>Business Impact:</b> Business Impact2 details.</p>
+<p><b>Objective:</b></p>
+<p>Factory Quality team needs to perform quarterly audits on various Assembly Lines w.r.t check-sheet, then store & maintain that all data
+  then also timely closure of findings is essential with proper emailed communication with respective department is must,
+  so we have automated all this process by developing the Power Apps & Share Point site</p>
+<p><b>Role:</b></p>
+<p>- Gathered all Audit Check-sheets and other data</p>
+<p>- Defined processlow & emailed communication formatting</p>
+<p>- Created Power Apps & data storage lists w.r.t the requirement & published all this at Share Point site</p>
+<p>- Used the functionality's: Patch, Email, Collections, veriable settings, connectors, Power Automate Approval flows</p>
+<p>- Tested & Deployed the App on Organization Tenent</p>
+<p><b>Business Impact:</b> Efficiency: 30 minutes/Audit savings</p>
 
 <div style="display: flex; justify-content: space-between; align-items: center; color: gray;">
     <span style="font-size: 1.3em; font-weight: bold; color: gray;">Project 5: Centroidal Z_Grid Automation (Arc GIS Python)</span> 
     <span style="font-size: 1em;">Client: John Deere Horizontina, Project Span: 3 Months</span>
 </div>
-<p><b>Goal:</b> Gol2 details.</p>
-<p><b>Role:</b> Role2 details.</p>
-<p><b>Results:</b> Results2 details.</p>
-<p><b>Business Impact:</b> Business Impact2 details.</p><hr><hr>
+<p><b>Objective:</b></p>
+<p>Optimize the Pump installation within the factory (Area of Interest) w.r.t Liquid Head, Elevation, location  </p>
+<p><b>Role:</b></p>
+<p>- Data Acquisition & AutoCAD layout standardization</p>
+<p>- Generate Root reference point, Fishnet Grid, generate points with data of Lat-Long data within the AOI</p>
+<p>- Generate Centroid data & Elevation data for each points</p>
+<p>- Developed UI that take User input: CAD data, Grid Rows X Columns count</p>
+<p>- Deployed the App on AWS EC2 Instance</p><hr><hr>
 
 <!--- Company2 Details--->
 <div class="project-item">
@@ -175,53 +209,61 @@
     </div><br>
 
 <div style="display: flex; justify-content: space-between; align-items: center; color: gray;">
-        <span style="font-size: 1.3em; font-weight: bold; color: gray;">Project 1: Extended Warranty System (ML) </span> 
+        <span style="font-size: 1.3em; font-weight: bold; color: gray;">Project 1: Gearbox Price Analysis (ML) </span> 
         <span style="font-size: 1em;">Client: QTAPL, Project Span: 5 Months</span>
     </div>
-    <p><b>Goal:</b> Gol1 details.</p>
-    <p><b>Role:</b> Role1 details.</p>
-    <p><b>Results:</b> Results1 details.</p>
-    <p><b>Business Impact:</b> Business Impact1 details.</p>
+    <p><b>Objective:</b></p>
+    <p>QTAPL is having very large varity of Gerboxes based on Torque, IP rating and others, so it is very dificult to predict the gearbox price as many components are combined in the single Gerboxes
+      So to solve this problem I've developed the ML Regression model that can able to predict the Gearbox Price</p>
+    <p><b>Role:</b></p>
+    <p>- Extracted input data from Design Calculation datasets, Purchase database & Internal Production & Assembly team</p>
+    <p>- Performed Data Pre-processing, Data cleaning, feature selection, Data balancing, Exploratory Data Analysis, Visualization Techniques, data Cleansing,
+       Feature Engineering, Feature Scaling, Model Selection/building/Evaluation, Hyper-parameter tunning.</p>
+    <p>- Model testing on Rest API (Postman) and then Created UI</p>
+    <p>- Production workflow: Upload data in bulk and after clicking on Predict he predicted data will get auto-downloaded</p>
+    <p><b>Results:</b> Application Deployed on Heroku Cloud with complete CI-CD using GitHub Actions with R2_score of 94%.  </p>
   </div>
 
 
 <div style="display: flex; justify-content: space-between; align-items: center; color: gray;">
-    <span style="font-size: 1.3em; font-weight: bold; color: gray;">Project 2: Gearbox Price Analysis (ML) </span> 
-    <span style="font-size: 1em;">Client: QTAPL, Project Span: 5 Months</span>
+    <span style="font-size: 1.3em; font-weight: bold; color: gray;">Project 2: Gear Orientation Predictor (CVML) </span> 
+    <span style="font-size: 1em;">Client: QTAPL, Project Span: 6 Months</span>
 </div>
-<p><b>Goal:</b> Gol2 details.</p>
-<p><b>Role:</b> Role2 details.</p>
-<p><b>Results:</b> Results2 details.</p>
-<p><b>Business Impact:</b> Business Impact2 details.</p>
+<p><b>Objective:</b></p>
+<p>After Gearbox Assembly it is very difficult to Guess the Gear Orientation (ACDEF) and if any wrong gear get fitted then it leads to be major rejection,
+  So to resolve this issue I've developed one CVML model that will detect & predict the proper gear Orientation</p>
+<p><b>Role:</b></p>
+<p>- Installed IP cameras at GB Assembly section, created & recorded the Image data</p>
+<p>- Data Preprocessing & Image labelling using Labelimg tool</p>
+<p>- used pretrained YOLOv6 model and Fine-tunned on our custome dataset by utilizing Colab GPU</p>
+<p>- Evaluated & tested the model on unseen data</p>
+<p>- Ceated UI that can provide the functionality to realtime Gear Orientation detection</p>
+<p><b>Results:</b> Application Deployed on organization server with accuracy of 97%.  </p>
+<p><b>Business Impact:</b> Efficiency: 2000 Hrs./Year savings</p>
 
 
 <div style="display: flex; justify-content: space-between; align-items: center; color: gray;">
-    <span style="font-size: 1.3em; font-weight: bold; color: gray;">Project 3: Gear Orientation Predictor (CVML) </span> 
+    <span style="font-size: 1.3em; font-weight: bold; color: gray;">Project 3: Product Info & Sales Chatbot (NLP) </span> 
     <span style="font-size: 1em;">Client: QTAPL, Project Span: 5 Months</span>
 </div>
-<p><b>Goal:</b> Gol2 details.</p>
-<p><b>Role:</b> Role2 details.</p>
-<p><b>Results:</b> Results2 details.</p>
-<p><b>Business Impact:</b> Business Impact2 details.</p>
-
-
-<div style="display: flex; justify-content: space-between; align-items: center; color: gray;">
-    <span style="font-size: 1.3em; font-weight: bold; color: gray;">Project 4: Product Info & Sales Chatbot (NLP) </span> 
-    <span style="font-size: 1em;">Client: QTAPL, Project Span: 5 Months</span>
-</div>
-<p><b>Goal:</b> Gol2 details.</p>
-<p><b>Role:</b> Role2 details.</p>
-<p><b>Results:</b> Results2 details.</p>
-<p><b>Business Impact:</b> Business Impact2 details.</p><hr>
+<p><b>Objective:</b></p>
+<p>For Better customer engagement, product portfolio info. & Reduce customer waiting time we have developed Pytorch based chatbot for basic tasks.</p>
+<p><b>Role:</b></p>
+<p>- Collected data of Customer Reviews, Complaints, Products information and service offerings, Delivery and Transactional data, etc.</p>
+<p>- after that collected data transferred into json format and done following steps - Data Engineering and Feature selection then applied NLP techniques
+   on cleaned data </p>
+<p>- Trained Deep learning model using Pytorch and got Accuracy: >90%</p>
+<p>- Created UI and integrated with the QTAPL home website</p><hr>
 
 <div style="display: flex; justify-content: space-between; align-items: center; color: gray;">
     <span style="font-size: 1.3em; font-weight: bold; color: gray;">Other Projects & POC's </span> 
 </div>
 <p>1. Product Testing Sequence data Extractor tool (GenAI: LLM) - For John Deere Pune</p>
-<p>2. Deviation Request Power Apps & Power BI Dashboard (Power Apps & Power BI) - For John Deere Maxico</p>
+<p>2. Deviation Request Power Apps & Power BI Dashboard (Power Apps, Power BI & Power automate) - For John Deere Maxico</p>
 <p>3. Geo-referencing, Latitude/Longitude generation, Polygon Generation (Arc GIS, Digital Twin) - For All Factories</p>
 <p>4. PDF Querying Co-Pilot App powered by Google's Gemini-Pro-Vision (LLM)</p>
-<p>4. Faulty Alarm System (ML) - For QTAPL</p>
+<p>5. Faulty Alarm System (ML) - For QTAPL</p>
+<p>6. Extended Warranty System (ML) - For QTAPL</p>
 
 
 </div>
