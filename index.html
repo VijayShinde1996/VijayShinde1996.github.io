@@ -3,540 +3,450 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>vrs</title>
+  <title>Vijay Shinde | Data Scientist</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
   <style>
-        body {background-color: #f5f5f5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0;
-        color: #333; position: relative;}
-        #particles-js {position: absolute; width: 100%; height: 100%; z-index: -1; background-color: #2c3e50;}
-        #particles-top { position: absolute; top: 0; left: 0; width: 100%; height: 200px; /* Adjust height as needed */
-        z-index: -1;  background-color: #2c3e50;}
-        .container {width: 80%; max-width: 1200px; margin: 20px auto; background-color: #fff; padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 8px; overflow: hidden; position: relative;}
+    :root {
+      --primary: #2ecc71;       /* Green */
+      --secondary: #3498db;     /* Blue */
+      --dark: #2c3e50;          /* Dark Blue/Grey */
+      --text: #333333;
+      --text-light: #666666;
+      --bg-glass: rgba(255, 255, 255, 0.92);
+      --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+      --border-radius: 12px;
+    }
 
-        .header {text-align: center; margin-bottom: 20px; position: relative; animation: fadeInDown 1.5s ease-out;}
-        @keyframes fadeInDown {from {opacity: 0; transform: translateY(-50px);} to {opacity: 1; transform: translateY(0);}}
+    * { box-sizing: border-box; }
 
-        .header img {border-radius: 50%; width: 100px; height: 100px; object-fit: cover; border: 5px solid #3498db;
-        margin-bottom: 5px; animation: bounceIn 2s ease-out;}
-        @keyframes bounceIn {from, 20%, 40%, 60%, 80%, to {animation-timing-function: ease-in-out;}
-        from {opacity: 0; transform: scale3d(.3, .3, .3);}
-        20% {transform: scale3d(1.1, 1.1, 1.1);} 40% {transform: scale3d(.9, .9, .9);}
-        60% {opacity: 1; transform: scale3d(1.03, 1.03, 1.03);} 80% {transform: scale3d(.97, .97, .97);}
-        to {opacity: 1; transform: scaleX(1);}}
+    body {
+      background-color: var(--dark);
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-        .section {margin-bottom: 30px; background-color: #fff; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-left: 5px solid; border-radius: 4px; opacity: 0; transform: translateY(20px);
-        animation: section-slide-in 1s ease-in-out forwards;
-        transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;}
+    /* Background Particles */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(135deg, #1e2a36 0%, #2c3e50 100%);
+    }
 
-        .section:hover {transform: scale(1.05) rotate(2deg); background: linear-gradient(135deg, #e0f7fa, #ffeb3b);
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);}
-        .summary { border-left-color: #007bff; animation-delay: 0.5s; }
-        .skills { border-left-color: #28a745; animation-delay: 0.7s; }
-        .projects { border-left-color: #17a2b8; animation-delay: 0.9s; }
-        .work-history { border-left-color: #ffc107; animation-delay: 1.1s; }
-        .education { border-left-color: #fd7e14; animation-delay: 1.3s; }
-        .course-certification { border-left-color: #6f42c1; animation-delay: 1.5s; }
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 40px auto;
+      position: relative;
+    }
 
-        .section-title {font-size: 28px; border-bottom: 2px solid; padding-bottom: 5px; margin-bottom: 20px; color: #333; text-transform: uppercase;}
-        .summary .section-title { border-bottom-color: #007bff; }
-        .skills .section-title { border-bottom-color: #28a745; }
-        .projects .section-title { border-bottom-color: #17a2b8; }
-        .work-history .section-title { border-bottom-color: #ffc107; }
-        .education .section-title { border-bottom-color: #fd7e14; }
-        .course-certification .section-title { border-bottom-color: #6f42c1;}
-        .project-item, .job-item, .edu-item, .cert-item {margin-bottom: 15px;}
-        .project-item p:first-child, .job-item p:first-child, .edu-item p:first-child, .cert-item p:first-child {font-weight: bold; margin-bottom: 5px;}
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-        .btn {display: inline-block; background-color: #007bff; color: #fff; text-decoration: none; padding: 10px 20px;
-        border-radius: 5px; position: relative; overflow: hidden; transition: background-color 0.3s ease;}
-        .btn:hover {background-color: #0069d9;}
-        .btn::after {content: ''; display: block; position: absolute; top: 50%; left: 50%; width: 300%; height: 300%; 
-            background: rgba(255, 255, 255, 0.5); transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s; border-radius: 50%;
-            z-index: 0; opacity: 0;}
-        .btn:hover::after {width: 0; height: 0; top: 50%; left: 50%; opacity: 1;}
-        .btn span {position: relative; z-index: 1;}
-        @keyframes section-slide-in { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0); }}
+    /* Header Profile Card */
+    .header {
+      background: var(--bg-glass);
+      backdrop-filter: blur(8px);
+      border-radius: var(--border-radius);
+      padding: 40px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      margin-bottom: 30px;
+      animation: fadeInUp 0.8s ease-out;
+      border-top: 5px solid var(--primary);
+    }
 
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--secondary);
+      padding: 3px;
+      background: #fff;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.05) rotate(3deg);
+    }
+
+    .header h1 {
+      font-family: 'Poppins', sans-serif;
+      color: var(--dark);
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .header .role {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-top: 5px;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 0.95rem;
+      background: rgba(0,0,0,0.05);
+      padding: 8px 15px;
+      border-radius: 50px;
+      transition: all 0.3s;
+    }
+
+    .contact-item:hover {
+      background: var(--secondary);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Section Styles */
+    .section {
+      background: var(--bg-glass);
+      padding: 30px;
+      margin-bottom: 25px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      animation: fadeInUp 0.8s ease-out forwards;
+      opacity: 0; /* Hidden initially for animation */
+    }
+
+    .section-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      color: var(--dark);
+      border-left: 5px solid var(--secondary);
+      padding-left: 15px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .section-title i { opacity: 0.7; }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-category h4 {
+      margin: 0 0 10px 0;
+      color: var(--secondary);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background: #eef2f7;
+      color: var(--dark);
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1px solid #d1d9e6;
+    }
+
+    /* Experience Timeline */
+    .job-item {
+      border-left: 2px solid #e0e0e0;
+      padding-left: 20px;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .job-item::before {
+      content: '';
+      position: absolute;
+      left: -9px;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      background: var(--secondary);
+      border-radius: 50%;
+      border: 3px solid #fff;
+    }
+
+    .company-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .company-name { font-size: 1.3rem; font-weight: 700; color: var(--dark); }
+    .job-duration { color: var(--text-light); font-size: 0.9rem; background: #eee; padding: 2px 8px; border-radius: 4px; }
+
+    .project-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      transition: transform 0.2s;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border-color: var(--secondary);
+    }
+
+    .project-title { font-weight: 700; color: var(--text); margin-bottom: 5px; display: block; }
+    .client-tag { font-size: 0.8rem; color: #888; text-transform: uppercase; font-weight: 600; }
+    
+    .impact-text {
+      color: var(--primary);
+      font-weight: 600;
+      margin-top: 8px;
+      font-size: 0.9rem;
+      display: block;
+    }
+
+    /* Education & Certs */
+    .edu-item, .cert-item {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+    .edu-item:last-child { border-bottom: none; }
+    
+    .degree { font-weight: 600; color: var(--dark); }
+    .institution { color: var(--text-light); font-size: 0.9rem; }
+    .score { color: var(--secondary); font-weight: bold; font-size: 0.9rem;}
+
+    /* Utility */
+    .text-muted { color: #666; font-size: 0.95rem; }
+    
+    /* Animation Delays */
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+    .delay-5 { animation-delay: 0.5s; }
+
+    @media (max-width: 768px) {
+      .header h1 { font-size: 1.8rem; }
+      .company-header { flex-direction: column; gap: 5px; }
+      .edu-item { flex-direction: column; gap: 5px; }
+      .container { width: 95%; margin: 20px auto; }
+    }
   </style>
 </head>
-<!--- Header Details --->
 <body>
+
   <div id="particles-js"></div>
-  <div id="particles-top"></div>
+
   <div class="container">
-    <div class="header" style="background-color: #2c3e50; color: #fff; padding: 8px; " >
-      <img src="AI900.png" alt="Vijay's Photo">
-      <h1 style="color: #2ecc71;">Vijay Shinde</h1>
-      <p>Pune, Maharashtra India (Languages: Marathi, Hindi, English)</p>
-      <p><a href="tel:+919922858081" style="color: #3498db;">+91 9922858081</a> | <a href="mailto:shindevijay595@gmail.com" style="color: #3498db;">shindevijay595@gmail.com</a> | <a href="https://www.linkedin.com/in/vijay-shinde-098202133/" style="color: #3498db;">linkedin</a>
-        | <a href="https://github.com/VijayShinde1996" style="color: #3498db;">GitHub</a> |  <a href="https://huggingface.co/VijayShinde1996" style="color: #3498db;">huggingface</a> | <a href="https://www.hackerrank.com/profile/shindevijay595" style="color: #3498db;">Hacker Rank</a></p>
-    </div>
-
-<!--- Objective Details --->
-<div class="summary section">
-    <h2 class="section-title">Objective</h2>
-    <p>Seeking for an opportunity to work on challenging projects to use my skills, expertise and experience in best possible way for company’s goal and personal growth.</p>
-    </div>
-
-<!--- About Section Details --->
-<div class="summary section">
-  <h2 class="section-title">About Me</h2>
-  <p> I have dedicated 4.5+ years of experience in the core Data Science Industry working with various international clients, Project domains I'm working on is </p>
-  <p> 1- ML/DL/CVML/NLP/LLM/Gen-AI and R Shiny Projects with End to End Production Deployment on Server and Various Clouds with CI-CD and Front End.</p>
-  <p> 2- Microsoft Power Platforms - Power Apps, Power BI, Share Point, Power Automate, Databricks</p>
-  <p> 3- Arc GIS Pro - Geo-referencing, Latitude/Longitude, Polygon Generation, Centroidal Grid generation for entity installation optimization, etc.</p>
-  <p> 4- Talent Acquisition - Data Science, AI/ML/CVML/Generative AI profiles </p>
-  <p> Processing to Optimize Processes and Improve Accuracy. Eagerly seeking a Data Scientist role to leverage diverse skill, sets and drive impactful solutions in data-driven environments.</p>
-</div>
-
-<!--- Technical Skill Details --->
-<div class="skills section" style="font-family: 'Arial', sans-serif; color: #333;">
-  <h2 class="section-title" style="color: black;">Technical Skills</h2>
-  <ul style="list-style-type: none; padding-left: 0;">
-    <p><b>Machine Learning:</b> Regression, Classification, Clustering, Association.</p>
-    <p><b>Deep Learning:</b> ANN, CNN, LSTM, Tensorflow, Pytorch, Yolo, Fine-tunning w.r.t custom datasets, etc.</p>
-    <p><b>Natural Language Processing:</b> Hugging Face, Transformer, NLTK, NER, Spacy, word2vec, Chatbots</p>
-    <p><b>Generative AI:</b> Fine-tunning & Quantization: LLaMA, Gemma, Mixtral, Bert, Vector DB, Prompt Engineering, AI-driven applications and chatbots. </p>
-    <p><b>Model Deployment & Clouds:</b> Servers, Azure, AWS, Heroku, Streamlit, Postman (Rest API), Swagger, Docker, CI-CD with GitHub Actions</p>
-    <p><b>Data Science Pipelines:</b> Feature Engineering, Feature Selection & Optimization, Model Selection, Model Deployment</p>
-    <p><b>Data Analytics & Visualization:</b> Power BI, Tableau, Numpy, Pandas, PySpark, SciPy, Matplotlib, Seaborn, Scikitlearn, NLTK, Excel, etc. </p>
-    <p><b>Global Information System:</b> Arc GIS Pro, ArcPy, AutoCAD, Rivet, Matterport, Digital Twin</p>
-    <p><b>Web-Scraping & Python Automation:</b> Beautiful Soup, AutoScraper, RegX, Flask based tools</p>
-    <p><b>MVC Framework:</b> Python + SQLite3 + Flask </p>
-    <p><b>Languages & Databases:</b> SQL & No-SQL, Python, R, Flask, HTML, CSS, JS </p>
-    <p><b>Microsoft Power Pltforms:</b> Power Apps, Power BI, Power Automate, Share Point Site & Lists</p>
-    <p><b>Project Management tools:</b> Scrum, Agile, Jira</p>
-  </ul>
-</div>
-
-<!--- Professional Experience Details --->
-<div class="projects section">
-  <h2 class="section-title">Professional Experience</h2>
-
-<!--- Company1 Details--->
-  <div class="project-item">
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-        <span style="font-size: 1.5em; font-weight: bold;">Cyient Ltd </span> <span style="font-size: 1em;">(Dec. 2022 - Present)</span>
-    </div><br>
-
-    <div style="display: flex; justify-content: space-between; align-items: center; color: gray;">
-        <span style="font-size: 1.3em; font-weight: bold; color: gray;">Project 1: Labour Standard & Actual Cycle Time Prediction (ML)</span> 
-        <span style="font-size: 1em;">Client: John Deere</span>
-    </div>
-    <p><b>Objective:</b></p>
-    <p>Factory has multiple m/c operations like Bending/Sorting/Painting/etc. (12 usecases), currently there is no any efficent methode to estimate Labour Standard & Actual cycle time for each operation during EPDP</p>
-    <p><b>Role:</b></p>
-    <p>- Extracted input data from Ignition gateways and splitted that huge data into excel files</p>
-    <p>- Performed Data Pre-processing, Data cleaning, feature selection, Data balancing, Exploratory Data Analysis, Visualization Techniques, data Cleansing, Feature Engineering, Feature Scaling, Model Selection/building/Evaluation.</p>
-    <p>- For some models performed Hyper-parameters tunning by utilizing GPU system</p>
-    <p>- Model testing on Rest API (Postman) and then Created & Integrated 12 models in Single UI</p>
-    <p>- Production workflow: User needs to select appropriate model and upload data in bulk and after clicking on Predict he predicted data will get auto-downloaded</p>
-    <p><b>Results:</b> Application Deployed on organization server with overall R2_score of 92% - 99%.  </p>
-    <p><b>Business Impact:</b> Efficiency: 1200 Hrs./Year savings, Cost Avoidance: $27 (Approx), Patented:John Deere Internal.</p>
-  </div>
-
-
-<div style="display: flex; justify-content: space-between; align-items: center; color: gray;">
-    <span style="font-size: 1.3em; font-weight: bold; color: gray;">Project 2: Tractor Chassis Object Detection & Classification (CVML)</span> 
-    <span style="font-size: 1em;">Client: John Deere</span>
-</div>
-<p><b>Objective:</b></p>
-<p>In Tractor chassis assembly section factory wanted to detect & mask/unmasked 18 small critical components and to ensure the proper masking they currently use VCS in use, 
-  But due to human limitations this check points are getting missed and if it got missed then the rework cost is very huge, so to tackle the same 
-  we have introduced YOLO v8 Object detection CVML model</p>
-<p><b>Role:</b></p>
-<p>- Installed IP cameras at Assembly section, created & recorded the Image data</p>
-<p>- Data Preprocessing & Image labelling using Labelimg tool</p>
-<p>- used pretrained YOLOv8 model and Fine-tunned on our custome dataset by utilizing GPU system</p>
-<p>- Evaluated & tested the model on unseen data</p>
-<p>- Ceated UI that can provide the functionality of (Start/Stop/Capture/ webcam and make prediction) & generated Power BI dashboard & push data to PGAdmin database</p>
-<p><b>Results:</b> Application Deployed on organization server with accuracy of 95%.  </p>
-<p><b>Business Impact:</b> Efficiency: 1800 Hrs./Year savings</p>
-
-<div style="display: flex; justify-content: space-between; align-items: center; color: gray;">
-    <span style="font-size: 1.3em; font-weight: bold; color: gray;">Project 3: Engraved Serial Number Detection & Extraction (CVML)</span> 
-    <span style="font-size: 1em;">Client: John Deere</span>
-</div>
-<p><b>Objective:</b></p>
-<p>Replace manual recording of serial numbers from chassis (using basic technique: Black-page & Pencil) with Python Application that utilizes CVML to automate 
-  text extraction from images captured by webcam & also need to enhance visiability of serial numbers post-engraving process by addressing color corrections & 
-engraving accuracy issues</p>
-<p><b>Role:</b></p>
-<p>- Installed IP cameras at Assembly section, created & recorded the Image data</p>
-<p>- Labelled the images & Fine-tunned the YOLO model on custome data for serial number area detection</p>
-<p>- Evaluated & tested the model on unseen data</p>
-<p>- Extracted Serial number bbox cordinates & done image preprocessing for OCR input</p>
-<p>- Applied Paddle/Easy/Py_doctor/Py_tesseract OCR techniques and extracted text data with confidance score</p>
-<p>- Ceated UI that can provide the functionality to extract Text data by just capturing the camera frame</p>
-<p><b>Results:</b> Application Deployed on organization server with accuracy of 98%.  </p>
-<p><b>Business Impact:</b> Efficiency: 2500 Hrs./Year savings</p>
-
-<div style="display: flex; justify-content: space-between; align-items: center; color: gray;">
-    <span style="font-size: 1.3em; font-weight: bold; color: gray;">Project 4: Process Validation Audit Power App (Power Platforms)</span> 
-    <span style="font-size: 1em;">Client: John Deere</span>
-</div>
-<p><b>Objective:</b></p>
-<p>Factory Quality team needs to perform quarterly audits on various Assembly Lines w.r.t check-sheet, then store & maintain that all data
-  then also timely closure of findings is essential with proper emailed communication with respective department is must,
-  so we have automated all this process by developing the Power Apps & Share Point site</p>
-<p><b>Role:</b></p>
-<p>- Gathered all Audit Check-sheets and other data</p>
-<p>- Defined processlow & emailed communication formatting</p>
-<p>- Created Power Apps & data storage lists w.r.t the requirement & published all this at Share Point site</p>
-<p>- Used the functionality's: Patch, Email, Collections, veriable settings, connectors, Power Automate Approval flows</p>
-<p>- Tested & Deployed the App on Organization Tenent</p>
-<p><b>Business Impact:</b> Efficiency: 30 minutes/Audit savings</p>
-
-<div style="display: flex; justify-content: space-between; align-items: center; color: gray;">
-    <span style="font-size: 1.3em; font-weight: bold; color: gray;">Project 5: Centroidal Z_Grid Automation (Arc GIS Python)</span> 
-    <span style="font-size: 1em;">Client: John Deere</span>
-</div>
-<p><b>Objective:</b></p>
-<p>Optimize the Pump installation within the factory (Area of Interest) w.r.t Liquid Head, Elevation, location  </p>
-<p><b>Role:</b></p>
-<p>- Data Acquisition & AutoCAD layout standardization</p>
-<p>- Generate Root reference point, Fishnet Grid, generate points with data of Lat-Long data within the AOI</p>
-<p>- Generate Centroid data & Elevation data for each points</p>
-<p>- Developed UI that take User input: CAD data, Grid Rows X Columns count</p>
-<p>- Deployed the App on AWS EC2 Instance</p><hr><hr>
-
-<!--- Company2 Details--->
-<div class="project-item">
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-        <span style="font-size: 1.5em; font-weight: bold;">QTAPL </span> <span style="font-size: 1em;">(June 2019 - May 2022)</span>
-    </div><br>
-
-<div style="display: flex; justify-content: space-between; align-items: center; color: gray;">
-        <span style="font-size: 1.3em; font-weight: bold; color: gray;">Project 1: Gearbox Price Analysis (ML) </span> 
-        <span style="font-size: 1em;">Client: QTAPL</span>
-    </div>
-    <p><b>Objective:</b></p>
-    <p>QTAPL is having very large varity of Gerboxes based on Torque, IP rating and others, so it is very dificult to predict the gearbox price as many components are combined in the single Gerboxes
-      So to solve this problem I've developed the ML Regression model that can able to predict the Gearbox Price</p>
-    <p><b>Role:</b></p>
-    <p>- Extracted input data from Design Calculation datasets, Purchase database & Internal Production & Assembly team</p>
-    <p>- Performed Data Pre-processing, Data cleaning, feature selection, Data balancing, Exploratory Data Analysis, Visualization Techniques, data Cleansing,
-       Feature Engineering, Feature Scaling, Model Selection/building/Evaluation, Hyper-parameter tunning.</p>
-    <p>- Model testing on Rest API (Postman) and then Created UI</p>
-    <p>- Production workflow: Upload data in bulk and after clicking on Predict he predicted data will get auto-downloaded</p>
-    <p><b>Results:</b> Application Deployed on Heroku Cloud with complete CI-CD using GitHub Actions with R2_score of 94%.  </p>
-  </div>
-
-
-<div style="display: flex; justify-content: space-between; align-items: center; color: gray;">
-    <span style="font-size: 1.3em; font-weight: bold; color: gray;">Project 2: Gear Orientation Predictor (CVML) </span> 
-    <span style="font-size: 1em;">Client: QTAPL</span>
-</div>
-<p><b>Objective:</b></p>
-<p>After Gearbox Assembly it is very difficult to Guess the Gear Orientation (ACDEF) and if any wrong gear get fitted then it leads to be major rejection,
-  So to resolve this issue I've developed one CVML model that will detect & predict the proper gear Orientation</p>
-<p><b>Role:</b></p>
-<p>- Installed IP cameras at GB Assembly section, created & recorded the Image data</p>
-<p>- Data Preprocessing & Image labelling using Labelimg tool</p>
-<p>- used pretrained YOLOv6 model and Fine-tunned on our custome dataset by utilizing Colab GPU</p>
-<p>- Evaluated & tested the model on unseen data</p>
-<p>- Ceated UI that can provide the functionality to realtime Gear Orientation detection</p>
-<p><b>Results:</b> Application Deployed on organization server with accuracy of 97%.  </p>
-<p><b>Business Impact:</b> Efficiency: 2000 Hrs./Year savings</p>
-
-
-<div style="display: flex; justify-content: space-between; align-items: center; color: gray;">
-    <span style="font-size: 1.3em; font-weight: bold; color: gray;">Project 3: Product Info & Sales Chatbot (NLP) </span> 
-    <span style="font-size: 1em;">Client: QTAPL</span>
-</div>
-<p><b>Objective:</b></p>
-<p>For Better customer engagement, product portfolio info. & Reduce customer waiting time we have developed Pytorch based chatbot for basic tasks.</p>
-<p><b>Role:</b></p>
-<p>- Collected data of Customer Reviews, Complaints, Products information and service offerings, Delivery and Transactional data, etc.</p>
-<p>- after that collected data transferred into json format and done following steps - Data Engineering and Feature selection then applied NLP techniques
-   on cleaned data </p>
-<p>- Trained Deep learning model using Pytorch and got Accuracy: >90%</p>
-<p>- Created UI and integrated with the QTAPL home website</p><hr>
-
-<div style="display: flex; justify-content: space-between; align-items: center; color: gray;">
-    <span style="font-size: 1.3em; font-weight: bold; color: gray;">Other Projects & POC's </span> 
-</div>
-<p>1. Product Testing Sequence data Extractor tool (GenAI: LLM) - For John Deere</p>
-<p>2. Deviation Request Power Apps & Power BI Dashboard (Power Apps, Power BI & Power automate) - For John Deere</p>
-<p>3. Geo-referencing, Latitude/Longitude generation, Polygon Generation (Arc GIS, Digital Twin) - For All Factories</p>
-<p>4. PDF Querying Co-Pilot App powered by Google's Gemini-Pro-Vision (LLM)</p>
-<p>5. Faulty Alarm System (ML) - For QTAPL</p>
-<p>6. Extended Warranty System (ML) - For QTAPL</p>
-
-
-</div>
-
-<!--- Education Details --->
-  <div class="education section">
-    <h2 class="section-title">EDUCATION</h2>
     
-        <div class="edu-item">
-        <p>D Y Patil College of Engineering Pune (University: Savitribai Phule Pune University)</p>
-        <p>BE Mechanical : 2018 with 75.06%</p>    
-        </div>
-
-        <div class="edu-item">
-            <p>Shri Nagesh Jr. College Jamkhed (Maharashtra State Board)</p>
-            <p>12th (HSC) : 2014 with 63.54%</p> 
-        </div>
-
-        <div class="edu-item">
-            <p>Shri Bhairavnath Vidyalaya Halgaon (Maharashtra State Board)</p>
-            <p>10th (SSC) : 2012 with 79.09%</p> 
-    </div>
-  </div>
-
-<!--- Certification Details --->
-    <div class="course-certification section">
-      <h2 class="section-title">Achievements & Awards</h2>
+    <header class="header">
+      <img src="AI900.png" alt="Vijay Shinde" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Vijay+Shinde&background=0D8ABC&color=fff&size=150'">
+      <h1>Vijay Shinde</h1>
+      <div class="role">Senior Data Scientist</div>
+      <p class="text-muted">Pune, Maharashtra, India | Languages: Marathi, Hindi, English</p>
       
-      <div class="cert-item;">
-        <p>1. FY 2024-2025: "Special Recognition token for contributions to Data Science & Automation - From John Deere</p>        
-        <p>2. FY 2023-2024: "Special Recognition token for contributions to Data Science, Object Detection, Arc GIS & MS Power Platforms - From John Deere</p>        
-        <p>3. FY 2023-2024: "Most Valuable Performer Bronze - Team to John Deere - Digital Warriors" - From Cyient</p>
-        <p>4. FY 2022-2023: "Most Valuable Performer Bronze - Individual" - From Cyient</p>
-        <p>5. FY 2021-2022: "Best Young Achiever of the Year" - From Rajdeep Industrial Products pvt ltd</p>      
+      <div class="contact-info">
+        <a href="tel:+919922858081" class="contact-item"><i class="fas fa-phone"></i> +91 9922858081</a>
+        <a href="mailto:shindevijay595@gmail.com" class="contact-item"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://www.linkedin.com/in/vijay-shinde-098202133/" target="_blank" class="contact-item"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/VijayShinde1996" target="_blank" class="contact-item"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://huggingface.co/VijayShinde1996" target="_blank" class="contact-item"><i class="fas fa-brain"></i> HuggingFace</a>
       </div>
-    </div>
+    </header>
 
-    <div class="course-certification section">
-        <h2 class="section-title">Certifications & Publications</h2>
+    <section class="section delay-1">
+      <h2 class="section-title"><i class="fas fa-user-circle"></i> Professional Summary</h2>
+      <p>
+        I have dedicated <strong>4.5+ years of experience</strong> in the core Data Science Industry working with various international clients. My expertise spans ML, DL, CV, NLP, LLM/Gen-AI, and R Shiny projects with end-to-end production deployment on servers and clouds (Azure, AWS) with CI/CD.
+      </p>
+      <p>
+        Currently seeking a Data Scientist role to leverage diverse skill sets in <strong>Machine Learning, Power Platforms, GIS, and Generative AI</strong> to drive impactful solutions in data-driven environments.
+      </p>
+    </section>
+
+    <section class="section delay-2">
+      <h2 class="section-title"><i class="fas fa-code"></i> Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4>Machine Learning & DL</h4>
+          <div class="skill-tags">
+            <span class="tag">Regression</span> <span class="tag">Classification</span>
+            <span class="tag">TensorFlow</span> <span class="tag">PyTorch</span> <span class="tag">YOLO</span>
+            <span class="tag">CNN/ANN</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h4>Gen-AI & NLP</h4>
+          <div class="skill-tags">
+            <span class="tag">LLaMA/Gemma</span> <span class="tag">Transformers</span>
+            <span class="tag">Hugging Face</span> <span class="tag">LangChain</span>
+            <span class="tag">Prompt Engineering</span> <span class="tag">Vector DB</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h4>DevOps & Cloud</h4>
+          <div class="skill-tags">
+            <span class="tag">Azure</span> <span class="tag">AWS</span>
+            <span class="tag">Docker</span> <span class="tag">CI/CD</span>
+            <span class="tag">Flask/Streamlit</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h4>Data & Analytics</h4>
+          <div class="skill-tags">
+            <span class="tag">Python</span> <span class="tag">SQL</span>
+            <span class="tag">Power BI</span> <span class="tag">ArcGIS Pro</span>
+            <span class="tag">Pandas/NumPy</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section delay-3">
+      <h2 class="section-title"><i class="fas fa-briefcase"></i> Experience</h2>
+
+      <div class="job-item">
+        <div class="company-header">
+          <span class="company-name">Cyient Ltd</span>
+          <span class="job-duration">Dec 2022 - Present</span>
+        </div>
         
-        <div class="cert-item;">
-          <p>1. Azure AI Fundamentals (AI-900) - From Microsoft</p>        
-          <p>2. Machine learning to Deep Learning: A journey for Remote Sensing Data Classification and Detection" - From ISRO</p>
-          <p>3. Feature Extraction From High Resolution Images using Machine Learning and other Techniques - From IIRS</p>
-          <p>4. Crash Course on Python - From Google/Corsera</p>    
-          <p>5. Research Papers Published on International Journals IJIERE & IJSRD Journals</p>      
+        <div class="project-card">
+          <span class="project-title">1. Labour Standard & Actual Cycle Time Prediction (ML)</span>
+          <span class="client-tag">Client: John Deere</span>
+          <p class="text-muted">Developed an ML application to predict cycle times for 12 factory operations using Ignition gateway data. Integrated 12 models into a single UI with REST API.</p>
+          <span class="impact-text"><i class="fas fa-chart-line"></i> Impact: 1200 Hrs/Year Savings | 92-99% Accuracy | Patented</span>
+        </div>
+
+        <div class="project-card">
+          <span class="project-title">2. Tractor Chassis Object Detection (CVML)</span>
+          <span class="client-tag">Client: John Deere</span>
+          <p class="text-muted">Implemented YOLOv8 for detecting masking on critical chassis components to replace manual checks. Deployed on organization server with Power BI integration.</p>
+          <span class="impact-text"><i class="fas fa-chart-line"></i> Impact: 1800 Hrs/Year Savings | 95% Accuracy</span>
+        </div>
+
+        <div class="project-card">
+          <span class="project-title">3. Engraved Serial Number Extraction (OCR/CV)</span>
+          <span class="client-tag">Client: John Deere</span>
+          <p class="text-muted">Automated text extraction from chassis images using fine-tuned YOLO and PaddleOCR to replace manual pencil-sketch recording.</p>
+          <span class="impact-text"><i class="fas fa-chart-line"></i> Impact: 2500 Hrs/Year Savings | 98% Accuracy</span>
         </div>
       </div>
 
+      <div class="job-item">
+        <div class="company-header">
+          <span class="company-name">QTAPL</span>
+          <span class="job-duration">June 2019 - May 2022</span>
+        </div>
 
-    <script>
-      particlesJS("particles-js", {
-        "particles": {
-          "number": {
-            "value": 80,
-            "density": {
-              "enable": true,
-              "value_area": 800
-            }
-          },
-          "color": {
-            "value": "#ffffff"
-          },
-          "shape": {
-            "type": "circle",
-            "stroke": {
-              "width": 0,
-              "color": "#000000"
-            },
-            "polygon": {
-              "nb_sides": 5
-            },
-            "image": {
-              "src": "img/github.svg",
-              "width": 100,
-              "height": 100
-            }
-          },
-          "opacity": {
-            "value": 0.5,
-            "random": false,
-            "anim": {
-              "enable": false,
-              "speed": 1,
-              "opacity_min": 0.1,
-              "sync": false
-            }
-          },
-          "size": {
-            "value": 3,
-            "random": true,
-            "anim": {
-              "enable": false,
-              "speed": 40,
-              "size_min": 0.1,
-              "sync": false
-            }
-          },
-          "line_linked": {
-            "enable": true,
-            "distance": 150,
-            "color": "#ffffff",
-            "opacity": 0.4,
-            "width": 1
-          },
-          "move": {
-            "enable": true,
-            "speed": 6,
-            "direction": "none",
-            "random": false,
-            "straight": false,
-            "out_mode": "out",
-            "bounce": false,
-            "attract": {
-              "enable": false,
-              "rotateX": 600,
-              "rotateY": 1200
-            }
-          }
-        },
-        "interactivity": {
-          "detect_on": "canvas",
-          "events": {
-            "onhover": {
-              "enable": true,
-              "mode": "repulse"
-            },
-            "onclick": {
-              "enable": true,
-              "mode": "push"
-            },
-            "resize": true
-          },
-          "modes": {
-            "grab": {
-              "distance": 400,
-              "line_linked": {
-                "opacity": 1
-              }
-            },
-            "bubble": {
-              "distance": 400,
-              "size": 40,
-              "duration": 2,
-              "opacity": 8,
-              "speed": 3
-            },
-            "repulse": {
-              "distance": 200,
-              "duration": 0.4
-            },
-            "push": {
-              "particles_nb": 4
-            },
-            "remove": {
-              "particles_nb": 2
-            }
-          }
-        },
-        "retina_detect": true
-      });
+        <div class="project-card">
+          <span class="project-title">1. Gearbox Price Analysis (Regression)</span>
+          <p class="text-muted">Created a price prediction model for complex gearbox configurations using historical purchase and design data. Deployed on Heroku with CI/CD.</p>
+          <span class="impact-text"><i class="fas fa-check"></i> Result: 94% R2 Score</span>
+        </div>
 
-      particlesJS("particles-top", {
-        "particles": {
-          "number": {
-            "value": 80,
-            "density": {
-              "enable": true,
-              "value_area": 800
-            }
-          },
-          "color": {
-            "value": "#ffffff"
-          },
-          "shape": {
-            "type": "circle",
-            "stroke": {
-              "width": 0,
-              "color": "#000000"
-            },
-            "polygon": {
-              "nb_sides": 5
-            },
-            "image": {
-              "src": "img/github.svg",
-              "width": 100,
-              "height": 100
-            }
-          },
-          "opacity": {
-            "value": 0.5,
-            "random": false,
-            "anim": {
-              "enable": false,
-              "speed": 1,
-              "opacity_min": 0.1,
-              "sync": false
-            }
-          },
-          "size": {
-            "value": 3,
-            "random": true,
-            "anim": {
-              "enable": false,
-              "speed": 40,
-              "size_min": 0.1,
-              "sync": false
-            }
-          },
-          "line_linked": {
-            "enable": true,
-            "distance": 150,
-            "color": "#ffffff",
-            "opacity": 0.4,
-            "width": 1
-          },
-          "move": {
-            "enable": true,
-            "speed": 6,
-            "direction": "none",
-            "random": false,
-            "straight": false,
-            "out_mode": "out",
-            "bounce": false,
-            "attract": {
-              "enable": false,
-              "rotateX": 600,
-              "rotateY": 1200
-            }
-          }
-        },
-        "interactivity": {
-          "detect_on": "canvas",
-          "events": {
-            "onhover": {
-              "enable": true,
-              "mode": "repulse"
-            },
-            "onclick": {
-              "enable": true,
-              "mode": "push"
-            },
-            "resize": true
-          },
-          "modes": {
-            "grab": {
-              "distance": 400,
-              "line_linked": {
-                "opacity": 1
-              }
-            },
-            "bubble": {
-              "distance": 400,
-              "size": 40,
-              "duration": 2,
-              "opacity": 8,
-              "speed": 3
-            },
-            "repulse": {
-              "distance": 200,
-              "duration": 0.4
-            },
-            "push": {
-              "particles_nb": 4
-            },
-            "remove": {
-              "particles_nb": 2
-            }
-          }
-        },
-        "retina_detect": true
-      });
-    </script>
+        <div class="project-card">
+          <span class="project-title">2. Gear Orientation Predictor (CV)</span>
+          <p class="text-muted">YOLOv6 model to detect correct gear orientation during assembly to prevent rejections.</p>
+          <span class="impact-text"><i class="fas fa-check"></i> Impact: 2000 Hrs/Year Savings | 97% Accuracy</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section delay-4">
+      <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+      <div class="edu-item">
+        <div>
+          <div class="degree">B.E. Mechanical Engineering</div>
+          <div class="institution">D Y Patil College of Engineering, Pune (SPPU)</div>
+        </div>
+        <div class="score">2018 | 75.06%</div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="degree">HSC (12th Grade)</div>
+          <div class="institution">Shri Nagesh Jr. College Jamkhed</div>
+        </div>
+        <div class="score">2014 | 63.54%</div>
+      </div>
+    </section>
+
+    <section class="section delay-5">
+      <h2 class="section-title"><i class="fas fa-trophy"></i> Awards & Certifications</h2>
+      <ul style="padding-left: 20px; color: var(--text);">
+        <li><strong>Special Recognition Token</strong> (2024 & 2025) - John Deere (Data Science Contributions)</li>
+        <li><strong>Most Valuable Performer (Bronze)</strong> - Cyient Ltd</li>
+        <li><strong>Microsoft Certified:</strong> Azure AI Fundamentals (AI-900)</li>
+        <li><strong>ISRO Certification:</strong> ML to Deep Learning for Remote Sensing</li>
+        <li><strong>Research Papers:</strong> Published in International Journals (IJIERE & IJSRD)</li>
+      </ul>
+    </section>
+
   </div>
+
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.2, "random": false },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.2, "width": 1 },
+        "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "out_mode": "out" }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" },
+          "onclick": { "enable": true, "mode": "push" },
+          "resize": true
+        },
+        "modes": {
+          "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
+          "push": { "particles_nb": 4 }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
 </body>
 </html>
