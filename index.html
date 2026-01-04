@@ -3,285 +3,138 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vijay Shinde | Senior Data Scientist</title>
+  <title>Vijay Shinde | Senior AI Data Scientist</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
   <style>
     :root {
-      --primary: #367C2B;       /* John Deere Green-ish */
-      --secondary: #FFDE00;     /* John Deere Yellow-ish accent */
-      --accent-blue: #3498db;   /* For tech accents */
-      --dark: #1e2a36;          
-      --text: #333333;
-      --text-light: #555555;
-      --bg-glass: rgba(255, 255, 255, 0.94);
-      --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
-      --border-radius: 12px;
+      --jd-green: #367C2B;
+      --jd-yellow: #FFDE00;
+      --glass: rgba(255, 255, 255, 0.03);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --text-main: #e0e0e0;
+      --text-dim: #a0a0a0;
+      --bg-dark: #0a0f14;
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background-color: var(--dark);
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      color: var(--text);
-      line-height: 1.6;
+      background-color: var(--bg-dark);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text-main);
+      overflow-x: hidden;
     }
 
-    /* Background Particles */
     #particles-js {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background: linear-gradient(135deg, #111 0%, #2c3e50 100%);
+      position: fixed; width: 100%; height: 100%; z-index: -1;
+      background: radial-gradient(circle at top right, #1a2e1a, #0a0f14);
     }
 
-    .container {
-      width: 90%;
-      max-width: 1000px;
-      margin: 40px auto;
-      position: relative;
-    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
 
-    /* Animations */
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Header Profile Card */
-    .header {
-      background: var(--bg-glass);
-      backdrop-filter: blur(10px);
-      border-radius: var(--border-radius);
-      padding: 40px;
+    /* --- HERO SECTION --- */
+    .hero {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(15px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 60px 40px;
       text-align: center;
-      box-shadow: var(--shadow);
-      margin-bottom: 30px;
-      animation: fadeInUp 0.8s ease-out;
-      border-top: 5px solid var(--primary);
+      margin-bottom: 40px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
     }
 
     .profile-img {
-      width: 140px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid var(--primary);
-      padding: 3px;
-      background: #fff;
-      margin-bottom: 15px;
-      transition: transform 0.3s ease;
+      width: 160px; height: 160px; border-radius: 50%;
+      border: 4px solid var(--jd-green);
+      margin-bottom: 20px; box-shadow: 0 0 30px rgba(54, 124, 43, 0.3);
     }
 
-    .profile-img:hover {
-      transform: scale(1.05) rotate(3deg);
+    h1 { font-family: 'Space Grotesk', sans-serif; font-size: 3.5rem; letter-spacing: -1px; margin-bottom: 10px; }
+    .hero .role { 
+        font-size: 1.5rem; color: var(--jd-yellow); font-weight: 700; 
+        text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px;
     }
 
-    .header h1 {
-      font-family: 'Poppins', sans-serif;
-      color: var(--dark);
-      margin: 0;
-      font-size: 2.5rem;
+    .contact-bar { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+    .contact-link {
+      background: var(--glass); border: 1px solid var(--glass-border);
+      color: var(--text-main); padding: 10px 20px; border-radius: 50px;
+      text-decoration: none; transition: 0.3s; font-size: 0.9rem;
+    }
+    .contact-link:hover { background: var(--jd-green); color: white; transform: translateY(-3px); }
+
+    /* --- SKILLS GRID --- */
+    .section-label { 
+        color: var(--jd-green); font-weight: 800; text-transform: uppercase; 
+        font-size: 0.85rem; letter-spacing: 3px; display: block; margin-bottom: 15px;
     }
 
-    .header .role {
-      color: var(--primary);
-      font-weight: 700;
-      font-size: 1.3rem;
-      margin-top: 5px;
+    .skills-wrapper {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 40px;
     }
 
-    .contact-info {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 20px;
+    .skill-card {
+      background: var(--glass); border: 1px solid var(--glass-border);
+      padding: 25px; border-radius: 16px; transition: 0.3s;
+    }
+    .skill-card:hover { border-color: var(--jd-green); background: rgba(255,255,255,0.05); }
+    .skill-card h3 { color: var(--jd-yellow); margin-bottom: 15px; font-size: 1.1rem; }
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { 
+        font-size: 0.75rem; background: rgba(54, 124, 43, 0.1); 
+        color: #fff; padding: 5px 12px; border-radius: 4px; border: 1px solid rgba(54, 124, 43, 0.3);
     }
 
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--text-light);
-      text-decoration: none;
-      font-size: 0.95rem;
-      background: rgba(0,0,0,0.05);
-      padding: 8px 15px;
-      border-radius: 50px;
-      transition: all 0.3s;
-      border: 1px solid transparent;
+    /* --- EXPERIENCE --- */
+    .experience-card {
+      background: var(--glass); border: 1px solid var(--glass-border);
+      border-radius: 20px; padding: 40px; margin-bottom: 30px; position: relative;
     }
 
-    .contact-item:hover {
-      background: var(--primary);
-      color: white;
-      border-color: var(--secondary);
-      transform: translateY(-2px);
+    .company-tag { 
+        background: var(--jd-green); color: white; padding: 5px 15px; 
+        border-radius: 4px; font-weight: 700; font-size: 0.9rem;
     }
 
-    /* Section Styles */
-    .section {
-      background: var(--bg-glass);
-      padding: 30px;
-      margin-bottom: 25px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      animation: fadeInUp 0.8s ease-out forwards;
-      opacity: 0;
+    .job-title { font-size: 1.8rem; margin: 15px 0; font-family: 'Space Grotesk'; }
+
+    .project-node {
+      border-left: 2px solid var(--jd-green); padding-left: 25px; margin: 30px 0; position: relative;
+    }
+    .project-node::before {
+      content: ''; position: absolute; left: -7px; top: 0;
+      width: 12px; height: 12px; background: var(--jd-yellow); border-radius: 50%;
     }
 
-    .section-title {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.5rem;
-      color: var(--dark);
-      border-left: 5px solid var(--primary);
-      padding-left: 15px;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .metrics-grid {
+      display: flex; gap: 20px; margin-top: 15px; flex-wrap: wrap;
     }
-    
-    .section-title i { opacity: 0.7; color: var(--primary); }
-
-    /* Skills Grid */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 20px;
+    .metric {
+      background: rgba(255,255,255,0.05); padding: 10px 15px; border-radius: 8px;
+      border-bottom: 2px solid var(--jd-green);
     }
+    .metric span { display: block; font-size: 0.7rem; color: var(--text-dim); text-transform: uppercase; }
+    .metric b { font-size: 1rem; color: var(--jd-yellow); }
 
-    .skill-category h4 {
-      margin: 0 0 10px 0;
-      color: var(--accent-blue);
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+    /* --- AWARDS --- */
+    .awards-list {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 15px;
     }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+    .award-item {
+      background: var(--glass); border-left: 4px solid var(--jd-yellow);
+      padding: 15px; font-size: 0.9rem;
     }
-
-    .tag {
-      background: #f0f4f8;
-      color: var(--dark);
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      border: 1px solid #d1d9e6;
-      transition: all 0.2s;
-    }
-    
-    .tag:hover {
-        background: var(--primary);
-        color: white;
-        border-color: var(--primary);
-    }
-
-    /* Experience Timeline */
-    .job-item {
-      border-left: 2px solid #e0e0e0;
-      padding-left: 20px;
-      margin-bottom: 40px;
-      position: relative;
-    }
-
-    .job-item::before {
-      content: '';
-      position: absolute;
-      left: -9px;
-      top: 0;
-      width: 16px;
-      height: 16px;
-      background: var(--primary);
-      border-radius: 50%;
-      border: 3px solid #fff;
-    }
-
-    .company-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      margin-bottom: 12px;
-    }
-
-    .company-name { font-size: 1.4rem; font-weight: 700; color: var(--dark); }
-    .job-duration { color: #fff; background: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
-    .job-duration.past { background: #95a5a6; }
-
-    .project-card {
-      background: #fff;
-      border: 1px solid #eee;
-      border-radius: 8px;
-      padding: 18px;
-      margin-bottom: 15px;
-      transition: transform 0.2s;
-    }
-
-    .project-card:hover {
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      border-left: 4px solid var(--accent-blue);
-    }
-
-    .project-title { font-weight: 700; color: var(--text); margin-bottom: 5px; display: block; font-size: 1.05rem; }
-    .client-tag { font-size: 0.8rem; color: #888; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
-    
-    .impact-text {
-      color: var(--primary);
-      font-weight: 600;
-      margin-top: 10px;
-      font-size: 0.9rem;
-      display: block;
-      border-top: 1px dashed #eee;
-      padding-top: 8px;
-    }
-
-    /* Education & Certs */
-    .edu-item {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 10px;
-      margin-bottom: 10px;
-    }
-    .edu-item:last-child { border-bottom: none; }
-    
-    .degree { font-weight: 600; color: var(--dark); }
-    .institution { color: var(--text-light); font-size: 0.9rem; }
-    .score { color: var(--accent-blue); font-weight: bold; font-size: 0.9rem;}
-
-    /* Utility */
-    .text-muted { color: #555; font-size: 0.95rem; }
-    
-    /* Animation Delays */
-    .delay-1 { animation-delay: 0.1s; }
-    .delay-2 { animation-delay: 0.2s; }
-    .delay-3 { animation-delay: 0.3s; }
-    .delay-4 { animation-delay: 0.4s; }
-    .delay-5 { animation-delay: 0.5s; }
 
     @media (max-width: 768px) {
-      .header h1 { font-size: 1.8rem; }
-      .company-header { flex-direction: column; gap: 5px; }
-      .edu-item { flex-direction: column; gap: 5px; }
-      .container { width: 95%; margin: 20px auto; }
+      h1 { font-size: 2.2rem; }
+      .awards-list { grid-template-columns: 1fr; }
+      .hero { padding: 40px 20px; }
     }
   </style>
 </head>
@@ -291,194 +144,128 @@
 
   <div class="container">
     
-    <header class="header">
+    <header class="hero">
       <img src="AI900.png" alt="Vijay Shinde" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Vijay+Shinde&background=367C2B&color=fff&size=150'">
+      <span class="section-label">Top Rated Data Scientist</span>
       <h1>Vijay Shinde</h1>
-      <div class="role">Senior Data Scientist at John Deere India</div>
-      <p class="text-muted">Pune, Maharashtra, India | Languages: Marathi, Hindi, English</p>
+      <div class="role">Senior Data Scientist @ John Deere</div>
       
-      <div class="contact-info">
-        <a href="tel:+919922858081" class="contact-item"><i class="fas fa-phone"></i> +91 9922858081</a>
-        <a href="mailto:shindevijay595@gmail.com" class="contact-item"><i class="fas fa-envelope"></i> Email</a>
-        <a href="https://www.linkedin.com/in/vijay-shinde-098202133/" target="_blank" class="contact-item"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://github.com/VijayShinde1996" target="_blank" class="contact-item"><i class="fab fa-github"></i> GitHub</a>
-        <a href="https://huggingface.co/VijayShinde1996" target="_blank" class="contact-item"><i class="fas fa-brain"></i> HuggingFace</a>
+      <div class="contact-bar">
+        <a href="mailto:shindevijay595@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://linkedin.com/in/vijay-shinde-098202133/" class="contact-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/VijayShinde1996" class="contact-link"><i class="fab fa-github"></i> GitHub</a>
+        <a href="tel:+919922858081" class="contact-link"><i class="fas fa-phone"></i> +91 9922858081</a>
       </div>
     </header>
 
-    <section class="section delay-1">
-      <h2 class="section-title"><i class="fas fa-user-circle"></i> Professional Summary</h2>
-      <p>
-        Senior Data Scientist with <strong>4.5+ years of experience</strong> working with international clients. Currently driving innovation at <strong>John Deere India</strong>, focusing on the intersection of AI and Full Stack Development.
-      </p>
-      <p>
-        My current work involves end-to-end creation of <strong>LLM/Gen-AI applications</strong>, complex <strong>ML/DL/CVML pipelines</strong>, and <strong>Digital Twin</strong> technologies. I specialize in deploying scalable solutions using <strong>React, Next.js, and Cloud Platforms</strong> to solve critical business problems in manufacturing and automation.
-      </p>
-    </section>
+    <span class="section-label">Core Specializations</span>
+    <div class="skills-wrapper">
+      <div class="skill-card">
+        <h3><i class="fas fa-brain"></i> Gen-AI & LLMs</h3>
+        <div class="tag-cloud">
+          <span class="tag">RAG Frameworks</span> <span class="tag">LangChain</span> <span class="tag">Llama 3</span> 
+          <span class="tag">Mistral</span> <span class="tag">Vector DB (Chroma)</span> <span class="tag">Fine-tuning</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3><i class="fas fa-laptop-code"></i> Full Stack AI</h3>
+        <div class="tag-cloud">
+          <span class="tag">React.js</span> <span class="tag">Next.js</span> <span class="tag">Python-Flask</span> 
+          <span class="tag">FastAPI</span> <span class="tag">Tailwind CSS</span> <span class="tag">Spring Boot</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3><i class="fas fa-microchip"></i> Vision & DL</h3>
+        <div class="tag-cloud">
+          <span class="tag">YOLOv8</span> <span class="tag">PyTorch</span> <span class="tag">OCR</span> 
+          <span class="tag">Digital Twins</span> <span class="tag">ArcGIS Pro</span> <span class="tag">CVML</span>
+        </div>
+      </div>
+    </div>
 
-    <section class="section delay-2">
-      <h2 class="section-title"><i class="fas fa-code"></i> Technical Stack</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h4>Full Stack & Web</h4>
-          <div class="skill-tags">
-            <span class="tag">Python-Flask</span> <span class="tag">Python-React</span>
-            <span class="tag">React.js</span> <span class="tag">Next.js</span>
-            <span class="tag">HTML/CSS/JS</span> <span class="tag">Spring boot</span>
-            <span class="tag">Streamlit</span> <span class="tag">Django</span>
+    <span class="section-label">Current Role</span>
+    <div class="experience-card">
+      <span class="company-tag">JOHN DEERE INDIA</span>
+      <h2 class="job-title">Senior Data Scientist</h2>
+      <p style="color: var(--text-dim); margin-bottom: 20px;">Architecting the future of AI-driven manufacturing and automated engineering systems.</p>
+      
+      <div class="project-node">
+          <h4>Enterprise AI & Digital Twin Ecosystem</h4>
+          <p style="font-size: 0.95rem; margin-top: 5px;">Building end-to-end LLM applications and Digital Twin interfaces using React/Next.js for real-time factory optimization.</p>
+          <div class="metrics-grid">
+            <div class="metric"><span>Focus Area</span><b>Gen-AI / RAG</b></div>
+            <div class="metric"><span>Platform</span><b>Next.js / Azure</b></div>
+            <div class="metric"><span>Impact</span><b>Automation</b></div>
           </div>
-        </div>
-        <div class="skill-category">
-          <h4>AI & Generative Models</h4>
-          <div class="skill-tags">
-            <span class="tag">LLM Applications</span> <span class="tag">Gen-AI</span>
-            <span class="tag">Hugging Face</span> <span class="tag">Prompt Engineering</span>
-            <span class="tag">Vector DB</span>
+      </div>
+    </div>
+
+    <span class="section-label">Previous Milestone</span>
+    <div class="experience-card">
+      <span class="company-tag" style="background: #555;">CYIENT LTD</span>
+      <h2 class="job-title">Data Scientist</h2>
+      
+      <div class="project-node">
+          <h4>Predictive Cycle Time Engine (Patented)</h4>
+          <p style="font-size: 0.9rem;">12 ML models integrated into a unified UI for factory operations.</p>
+          <div class="metrics-grid">
+            <div class="metric"><span>Accuracy</span><b>92% - 99%</b></div>
+            <div class="metric"><span>Savings</span><b>1200 Hrs/Yr</b></div>
           </div>
-        </div>
-        <div class="skill-category">
-          <h4>Data Science & GIS</h4>
-          <div class="skill-tags">
-            <span class="tag">Machine Learning</span> <span class="tag">Deep Learning</span>
-            <span class="tag">Computer Vision (CVML)</span> <span class="tag">NLP</span>
-            <span class="tag">ArcGIS Pro</span> <span class="tag">Digital Twin</span>
+      </div>
+
+      <div class="project-node">
+          <h4>Chassis Object Detection (CVML)</h4>
+          <p style="font-size: 0.9rem;">Automated defect detection using fine-tuned YOLOv8 on assembly lines.</p>
+          <div class="metrics-grid">
+            <div class="metric"><span>Precision</span><b>95%</b></div>
+            <div class="metric"><span>Savings</span><b>1800 Hrs/Yr</b></div>
           </div>
-        </div>
-        <div class="skill-category">
-          <h4>Cloud & DevOps</h4>
-          <div class="skill-tags">
-            <span class="tag">Azure</span> <span class="tag">AWS</span>
-            <span class="tag">Docker</span> <span class="tag">CI/CD</span>
-            <span class="tag">Deployments</span>
-            <span class="tag">Enterprise Servers</span>
-          </div>
-        </div>
       </div>
-    </section>
+    </div>
 
-    <section class="section delay-3">
-      <h2 class="section-title"><i class="fas fa-briefcase"></i> Professional Experience</h2>
-
-      <div class="job-item">
-        <div class="company-header">
-          <span class="company-name">John Deere India</span>
-          <span class="job-duration">Present</span>
-        </div>
-        <div style="margin-bottom: 10px; font-weight:600; color:var(--primary);">Role: Senior Data Scientist</div>
-
-        <div class="project-card">
-          <span class="project-title">AI/ML/NLP/LLM/CVML/DL Analytics Application & Digital Twin Development</span>
-          <p class="text-muted">
-             Spearheading the development of next-generation AI applications to optimize manufacturing and design processes.
-          </p>
-          <ul class="text-muted" style="padding-left: 20px; margin-top: 10px;">
-            <li><strong>Gen-AI & LLM:</strong> Designing and deploying Large Language Model applications for internal automation.</li>
-            <li><strong>Full Stack Development:</strong> Building robust front-ends using <strong>React and Next.js</strong> to serve AI models to end-users.</li>
-            <li><strong>Digital Twin & GIS:</strong> implementing GIS-based solutions and Digital Twins for factory layout optimization and asset tracking.</li>
-            <li><strong>Advanced Analytics:</strong> Developing pipelines for NLP, CVML, and complex Data Analytics.</li>
-            <li><strong>Deployment:</strong> Managing end-to-end production deployments on cloud infrastructure.</li>
-          </ul>
-        </div>
+    <span class="section-label">Honors & Certifications</span>
+    <div class="awards-list">
+      <div class="award-item">
+        <i class="fas fa-medal" style="color:var(--jd-yellow)"></i> 
+        <b>John Deere Special Recognition (2024-25)</b><br>
+        For excellence in Data Science & AI projects.
       </div>
-
-      <div class="job-item">
-        <div class="company-header">
-          <span class="company-name">Cyient Ltd</span>
-          <span class="job-duration past">Dec 2022 - 2025</span>
-        </div>
-        
-        <div class="project-card">
-          <span class="project-title">1. Labour Standard & Actual Cycle Time Prediction (ML)</span>
-          <span class="client-tag">Client: John Deere</span>
-          <p class="text-muted">Developed an ML application to predict cycle times for 12 factory operations using Ignition gateway data. Integrated 12 models into a single UI with REST API.</p>
-          <span class="impact-text"><i class="fas fa-chart-line"></i> Impact: 1200 Hrs/Year Savings | 92-99% Accuracy | Patented</span>
-        </div>
-
-        <div class="project-card">
-          <span class="project-title">2. Tractor Chassis Object Detection (CVML)</span>
-          <span class="client-tag">Client: John Deere</span>
-          <p class="text-muted">Implemented YOLOv8 for detecting masking on critical chassis components to replace manual checks. Deployed on organization server with Power BI integration.</p>
-          <span class="impact-text"><i class="fas fa-eye"></i> Impact: 1800 Hrs/Year Savings | 95% Accuracy</span>
-        </div>
-
-        <div class="project-card">
-          <span class="project-title">3. Engraved Serial Number Extraction (OCR/CV)</span>
-          <span class="client-tag">Client: John Deere</span>
-          <p class="text-muted">Automated text extraction from chassis images using fine-tuned YOLO and PaddleOCR to replace manual pencil-sketch recording.</p>
-          <span class="impact-text"><i class="fas fa-robot"></i> Impact: 2500 Hrs/Year Savings | 98% Accuracy</span>
-        </div>
+      <div class="award-item">
+        <i class="fas fa-certificate" style="color:var(--jd-yellow)"></i> 
+        <b>Microsoft Azure AI-900</b><br>
+        Certified Azure AI Fundamentals.
       </div>
-
-      <div class="job-item">
-        <div class="company-header">
-          <span class="company-name">QTAPL</span>
-          <span class="job-duration past">June 2019 - May 2022</span>
-        </div>
-
-        <div class="project-card">
-          <span class="project-title">1. Gearbox Price Analysis (Regression)</span>
-          <p class="text-muted">Created a price prediction model for complex gearbox configurations using historical purchase and design data. Deployed on Heroku with CI/CD.</p>
-          <span class="impact-text"><i class="fas fa-check"></i> Result: 94% R2 Score</span>
-        </div>
-
-        <div class="project-card">
-          <span class="project-title">2. Gear Orientation Predictor (CV)</span>
-          <p class="text-muted">YOLOv6 model to detect correct gear orientation during assembly to prevent rejections.</p>
-          <span class="impact-text"><i class="fas fa-check"></i> Impact: 2000 Hrs/Year Savings | 97% Accuracy</span>
-        </div>
+      <div class="award-item">
+        <i class="fas fa-award" style="color:var(--jd-yellow)"></i> 
+        <b>MVP Bronze Individual</b><br>
+        Cyient Ltd Excellence Award.
       </div>
-    </section>
-
-    <section class="section delay-4">
-      <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
-      <div class="edu-item">
-        <div>
-          <div class="degree">B.E. Mechanical Engineering</div>
-          <div class="institution">D Y Patil College of Engineering, Pune (SPPU)</div>
-        </div>
-        <div class="score">2018 | 75.06%</div>
+      <div class="award-item">
+        <i class="fas fa-book" style="color:var(--jd-yellow)"></i> 
+        <b>Published Researcher</b><br>
+        Published in IJIERE & IJSRD journals.
       </div>
-    </section>
+    </div>
 
-    <section class="section delay-5">
-      <h2 class="section-title"><i class="fas fa-trophy"></i> Awards & Certifications</h2>
-      <ul style="padding-left: 20px; color: var(--text);">
-        <li><strong>Special Recognition Token</strong> (2024 & 2025) - John Deere (Data Science Contributions)</li>
-        <li><strong>Most Valuable Performer (Bronze)</strong> - Cyient Ltd</li>
-        <li><strong>Microsoft Certified:</strong> Azure AI Fundamentals (AI-900)</li>
-        <li><strong>ISRO Certification:</strong> ML to Deep Learning for Remote Sensing</li>
-        <li><strong>Research Papers:</strong> Published in International Journals (IJIERE & IJSRD)</li>
-      </ul>
-    </section>
+    <footer style="text-align: center; padding: 60px 0; color: var(--text-dim); font-size: 0.8rem;">
+        &copy; 2026 Vijay Shinde | Handcrafted with Next.js logic & Data Science precision.
+    </footer>
 
   </div>
 
   <script>
     particlesJS("particles-js", {
       "particles": {
-        "number": { "value": 70, "density": { "enable": true, "value_area": 800 } },
-        "color": { "value": "#ffffff" },
+        "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#367C2B" },
         "shape": { "type": "circle" },
-        "opacity": { "value": 0.2, "random": false },
-        "size": { "value": 3, "random": true },
-        "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.15, "width": 1 },
-        "move": { "enable": true, "speed": 1.5, "direction": "none", "random": false, "out_mode": "out" }
-      },
-      "interactivity": {
-        "detect_on": "canvas",
-        "events": {
-          "onhover": { "enable": true, "mode": "bubble" },
-          "onclick": { "enable": true, "mode": "push" },
-          "resize": true
-        },
-        "modes": {
-          "bubble": { "distance": 200, "size": 6, "duration": 2, "opacity": 0.8 },
-          "push": { "particles_nb": 4 }
-        }
-      },
-      "retina_detect": true
+        "opacity": { "value": 0.2 },
+        "size": { "value": 2 },
+        "line_linked": { "enable": true, "distance": 150, "color": "#367C2B", "opacity": 0.1, "width": 1 },
+        "move": { "enable": true, "speed": 1 }
+      }
     });
   </script>
 </body>
 </html>
-
