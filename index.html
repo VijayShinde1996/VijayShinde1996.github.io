@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vijay Shinde | Data Scientist</title>
+  <title>Vijay Shinde | Senior Data Scientist</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,13 +15,14 @@
 
   <style>
     :root {
-      --primary: #2ecc71;       /* Green */
-      --secondary: #3498db;     /* Blue */
-      --dark: #2c3e50;          /* Dark Blue/Grey */
+      --primary: #367C2B;       /* John Deere Green-ish */
+      --secondary: #FFDE00;     /* John Deere Yellow-ish accent */
+      --accent-blue: #3498db;   /* For tech accents */
+      --dark: #1e2a36;          
       --text: #333333;
-      --text-light: #666666;
-      --bg-glass: rgba(255, 255, 255, 0.92);
-      --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+      --text-light: #555555;
+      --bg-glass: rgba(255, 255, 255, 0.94);
+      --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
       --border-radius: 12px;
     }
 
@@ -42,7 +43,7 @@
       width: 100%;
       height: 100%;
       z-index: -1;
-      background: linear-gradient(135deg, #1e2a36 0%, #2c3e50 100%);
+      background: linear-gradient(135deg, #111 0%, #2c3e50 100%);
     }
 
     .container {
@@ -61,7 +62,7 @@
     /* Header Profile Card */
     .header {
       background: var(--bg-glass);
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
       border-radius: var(--border-radius);
       padding: 40px;
       text-align: center;
@@ -76,7 +77,7 @@
       height: 140px;
       object-fit: cover;
       border-radius: 50%;
-      border: 4px solid var(--secondary);
+      border: 4px solid var(--primary);
       padding: 3px;
       background: #fff;
       margin-bottom: 15px;
@@ -96,8 +97,8 @@
 
     .header .role {
       color: var(--primary);
-      font-weight: 600;
-      font-size: 1.2rem;
+      font-weight: 700;
+      font-size: 1.3rem;
       margin-top: 5px;
     }
 
@@ -120,11 +121,13 @@
       padding: 8px 15px;
       border-radius: 50px;
       transition: all 0.3s;
+      border: 1px solid transparent;
     }
 
     .contact-item:hover {
-      background: var(--secondary);
+      background: var(--primary);
       color: white;
+      border-color: var(--secondary);
       transform: translateY(-2px);
     }
 
@@ -136,14 +139,14 @@
       border-radius: var(--border-radius);
       box-shadow: var(--shadow);
       animation: fadeInUp 0.8s ease-out forwards;
-      opacity: 0; /* Hidden initially for animation */
+      opacity: 0;
     }
 
     .section-title {
       font-family: 'Poppins', sans-serif;
       font-size: 1.5rem;
       color: var(--dark);
-      border-left: 5px solid var(--secondary);
+      border-left: 5px solid var(--primary);
       padding-left: 15px;
       margin-bottom: 20px;
       display: flex;
@@ -151,18 +154,18 @@
       gap: 10px;
     }
     
-    .section-title i { opacity: 0.7; }
+    .section-title i { opacity: 0.7; color: var(--primary); }
 
     /* Skills Grid */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 20px;
     }
 
     .skill-category h4 {
       margin: 0 0 10px 0;
-      color: var(--secondary);
+      color: var(--accent-blue);
       font-size: 0.9rem;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -175,13 +178,20 @@
     }
 
     .tag {
-      background: #eef2f7;
+      background: #f0f4f8;
       color: var(--dark);
-      padding: 5px 12px;
-      border-radius: 4px;
+      padding: 6px 12px;
+      border-radius: 6px;
       font-size: 0.85rem;
       font-weight: 500;
       border: 1px solid #d1d9e6;
+      transition: all 0.2s;
+    }
+    
+    .tag:hover {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
     }
 
     /* Experience Timeline */
@@ -199,7 +209,7 @@
       top: 0;
       width: 16px;
       height: 16px;
-      background: var(--secondary);
+      background: var(--primary);
       border-radius: 50%;
       border: 3px solid #fff;
     }
@@ -207,40 +217,44 @@
     .company-header {
       display: flex;
       justify-content: space-between;
+      align-items: baseline;
       flex-wrap: wrap;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
-    .company-name { font-size: 1.3rem; font-weight: 700; color: var(--dark); }
-    .job-duration { color: var(--text-light); font-size: 0.9rem; background: #eee; padding: 2px 8px; border-radius: 4px; }
+    .company-name { font-size: 1.4rem; font-weight: 700; color: var(--dark); }
+    .job-duration { color: #fff; background: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+    .job-duration.past { background: #95a5a6; }
 
     .project-card {
       background: #fff;
       border: 1px solid #eee;
       border-radius: 8px;
-      padding: 15px;
+      padding: 18px;
       margin-bottom: 15px;
       transition: transform 0.2s;
     }
 
     .project-card:hover {
       box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      border-color: var(--secondary);
+      border-left: 4px solid var(--accent-blue);
     }
 
-    .project-title { font-weight: 700; color: var(--text); margin-bottom: 5px; display: block; }
-    .client-tag { font-size: 0.8rem; color: #888; text-transform: uppercase; font-weight: 600; }
+    .project-title { font-weight: 700; color: var(--text); margin-bottom: 5px; display: block; font-size: 1.05rem; }
+    .client-tag { font-size: 0.8rem; color: #888; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
     
     .impact-text {
       color: var(--primary);
       font-weight: 600;
-      margin-top: 8px;
+      margin-top: 10px;
       font-size: 0.9rem;
       display: block;
+      border-top: 1px dashed #eee;
+      padding-top: 8px;
     }
 
     /* Education & Certs */
-    .edu-item, .cert-item {
+    .edu-item {
       display: flex;
       justify-content: space-between;
       border-bottom: 1px solid #eee;
@@ -251,10 +265,10 @@
     
     .degree { font-weight: 600; color: var(--dark); }
     .institution { color: var(--text-light); font-size: 0.9rem; }
-    .score { color: var(--secondary); font-weight: bold; font-size: 0.9rem;}
+    .score { color: var(--accent-blue); font-weight: bold; font-size: 0.9rem;}
 
     /* Utility */
-    .text-muted { color: #666; font-size: 0.95rem; }
+    .text-muted { color: #555; font-size: 0.95rem; }
     
     /* Animation Delays */
     .delay-1 { animation-delay: 0.1s; }
@@ -278,9 +292,9 @@
   <div class="container">
     
     <header class="header">
-      <img src="AI900.png" alt="Vijay Shinde" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Vijay+Shinde&background=0D8ABC&color=fff&size=150'">
+      <img src="AI900.png" alt="Vijay Shinde" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Vijay+Shinde&background=367C2B&color=fff&size=150'">
       <h1>Vijay Shinde</h1>
-      <div class="role">Senior Data Scientist</div>
+      <div class="role">Senior Data Scientist at John Deere India</div>
       <p class="text-muted">Pune, Maharashtra, India | Languages: Marathi, Hindi, English</p>
       
       <div class="contact-info">
@@ -295,58 +309,80 @@
     <section class="section delay-1">
       <h2 class="section-title"><i class="fas fa-user-circle"></i> Professional Summary</h2>
       <p>
-        I have dedicated <strong>4.5+ years of experience</strong> in the core Data Science Industry working with various international clients. My expertise spans ML, DL, CV, NLP, LLM/Gen-AI, and R Shiny projects with end-to-end production deployment on servers and clouds (Azure, AWS) with CI/CD.
+        Senior Data Scientist with <strong>4.5+ years of experience</strong> working with international clients. Currently driving innovation at <strong>John Deere India</strong>, focusing on the intersection of AI and Full Stack Development.
       </p>
       <p>
-        Currently seeking a Data Scientist role to leverage diverse skill sets in <strong>Machine Learning, Power Platforms, GIS, and Generative AI</strong> to drive impactful solutions in data-driven environments.
+        My current work involves end-to-end creation of <strong>LLM/Gen-AI applications</strong>, complex <strong>ML/DL/CVML pipelines</strong>, and <strong>Digital Twin</strong> technologies. I specialize in deploying scalable solutions using <strong>React, Next.js, and Cloud Platforms</strong> to solve critical business problems in manufacturing and automation.
       </p>
     </section>
 
     <section class="section delay-2">
-      <h2 class="section-title"><i class="fas fa-code"></i> Technical Skills</h2>
+      <h2 class="section-title"><i class="fas fa-code"></i> Technical Stack</h2>
       <div class="skills-grid">
         <div class="skill-category">
-          <h4>Machine Learning & DL</h4>
+          <h4>Full Stack & Web</h4>
           <div class="skill-tags">
-            <span class="tag">Regression</span> <span class="tag">Classification</span>
-            <span class="tag">TensorFlow</span> <span class="tag">PyTorch</span> <span class="tag">YOLO</span>
-            <span class="tag">CNN/ANN</span>
+            <span class="tag">React.js</span> <span class="tag">Next.js</span>
+            <span class="tag">HTML/CSS/JS</span> <span class="tag">Flask API</span>
+            <span class="tag">Streamlit</span>
           </div>
         </div>
         <div class="skill-category">
-          <h4>Gen-AI & NLP</h4>
+          <h4>AI & Generative Models</h4>
           <div class="skill-tags">
-            <span class="tag">LLaMA/Gemma</span> <span class="tag">Transformers</span>
-            <span class="tag">Hugging Face</span> <span class="tag">LangChain</span>
-            <span class="tag">Prompt Engineering</span> <span class="tag">Vector DB</span>
+            <span class="tag">LLM Applications</span> <span class="tag">Gen-AI</span>
+            <span class="tag">Hugging Face</span> <span class="tag">Prompt Engineering</span>
+            <span class="tag">Vector DB</span>
           </div>
         </div>
         <div class="skill-category">
-          <h4>DevOps & Cloud</h4>
+          <h4>Data Science & GIS</h4>
+          <div class="skill-tags">
+            <span class="tag">Machine Learning</span> <span class="tag">Deep Learning</span>
+            <span class="tag">Computer Vision (CVML)</span> <span class="tag">NLP</span>
+            <span class="tag">ArcGIS Pro</span> <span class="tag">Digital Twin</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h4>Cloud & DevOps</h4>
           <div class="skill-tags">
             <span class="tag">Azure</span> <span class="tag">AWS</span>
             <span class="tag">Docker</span> <span class="tag">CI/CD</span>
-            <span class="tag">Flask/Streamlit</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h4>Data & Analytics</h4>
-          <div class="skill-tags">
-            <span class="tag">Python</span> <span class="tag">SQL</span>
-            <span class="tag">Power BI</span> <span class="tag">ArcGIS Pro</span>
-            <span class="tag">Pandas/NumPy</span>
+            <span class="tag">Deployments</span>
           </div>
         </div>
       </div>
     </section>
 
     <section class="section delay-3">
-      <h2 class="section-title"><i class="fas fa-briefcase"></i> Experience</h2>
+      <h2 class="section-title"><i class="fas fa-briefcase"></i> Professional Experience</h2>
+
+      <div class="job-item">
+        <div class="company-header">
+          <span class="company-name">John Deere India</span>
+          <span class="job-duration">Present</span>
+        </div>
+        <div style="margin-bottom: 10px; font-weight:600; color:var(--primary);">Role: Senior Data Scientist</div>
+
+        <div class="project-card">
+          <span class="project-title">AI/LLM Application & Digital Twin Development</span>
+          <p class="text-muted">
+             Spearheading the development of next-generation AI applications to optimize manufacturing and design processes.
+          </p>
+          <ul class="text-muted" style="padding-left: 20px; margin-top: 10px;">
+            <li><strong>Gen-AI & LLM:</strong> Designing and deploying Large Language Model applications for internal automation.</li>
+            <li><strong>Full Stack Development:</strong> Building robust front-ends using <strong>React and Next.js</strong> to serve AI models to end-users.</li>
+            <li><strong>Digital Twin & GIS:</strong> implementing GIS-based solutions and Digital Twins for factory layout optimization and asset tracking.</li>
+            <li><strong>Advanced Analytics:</strong> Developing pipelines for NLP, CVML, and complex Data Analytics.</li>
+            <li><strong>Deployment:</strong> Managing end-to-end production deployments on cloud infrastructure.</li>
+          </ul>
+        </div>
+      </div>
 
       <div class="job-item">
         <div class="company-header">
           <span class="company-name">Cyient Ltd</span>
-          <span class="job-duration">Dec 2022 - Present</span>
+          <span class="job-duration past">Dec 2022 - 2025</span>
         </div>
         
         <div class="project-card">
@@ -360,21 +396,21 @@
           <span class="project-title">2. Tractor Chassis Object Detection (CVML)</span>
           <span class="client-tag">Client: John Deere</span>
           <p class="text-muted">Implemented YOLOv8 for detecting masking on critical chassis components to replace manual checks. Deployed on organization server with Power BI integration.</p>
-          <span class="impact-text"><i class="fas fa-chart-line"></i> Impact: 1800 Hrs/Year Savings | 95% Accuracy</span>
+          <span class="impact-text"><i class="fas fa-eye"></i> Impact: 1800 Hrs/Year Savings | 95% Accuracy</span>
         </div>
 
         <div class="project-card">
           <span class="project-title">3. Engraved Serial Number Extraction (OCR/CV)</span>
           <span class="client-tag">Client: John Deere</span>
           <p class="text-muted">Automated text extraction from chassis images using fine-tuned YOLO and PaddleOCR to replace manual pencil-sketch recording.</p>
-          <span class="impact-text"><i class="fas fa-chart-line"></i> Impact: 2500 Hrs/Year Savings | 98% Accuracy</span>
+          <span class="impact-text"><i class="fas fa-robot"></i> Impact: 2500 Hrs/Year Savings | 98% Accuracy</span>
         </div>
       </div>
 
       <div class="job-item">
         <div class="company-header">
           <span class="company-name">QTAPL</span>
-          <span class="job-duration">June 2019 - May 2022</span>
+          <span class="job-duration past">June 2019 - May 2022</span>
         </div>
 
         <div class="project-card">
@@ -400,13 +436,6 @@
         </div>
         <div class="score">2018 | 75.06%</div>
       </div>
-      <div class="edu-item">
-        <div>
-          <div class="degree">HSC (12th Grade)</div>
-          <div class="institution">Shri Nagesh Jr. College Jamkhed</div>
-        </div>
-        <div class="score">2014 | 63.54%</div>
-      </div>
     </section>
 
     <section class="section delay-5">
@@ -425,23 +454,23 @@
   <script>
     particlesJS("particles-js", {
       "particles": {
-        "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+        "number": { "value": 70, "density": { "enable": true, "value_area": 800 } },
         "color": { "value": "#ffffff" },
         "shape": { "type": "circle" },
         "opacity": { "value": 0.2, "random": false },
         "size": { "value": 3, "random": true },
-        "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.2, "width": 1 },
-        "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "out_mode": "out" }
+        "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.15, "width": 1 },
+        "move": { "enable": true, "speed": 1.5, "direction": "none", "random": false, "out_mode": "out" }
       },
       "interactivity": {
         "detect_on": "canvas",
         "events": {
-          "onhover": { "enable": true, "mode": "grab" },
+          "onhover": { "enable": true, "mode": "bubble" },
           "onclick": { "enable": true, "mode": "push" },
           "resize": true
         },
         "modes": {
-          "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
+          "bubble": { "distance": 200, "size": 6, "duration": 2, "opacity": 0.8 },
           "push": { "particles_nb": 4 }
         }
       },
