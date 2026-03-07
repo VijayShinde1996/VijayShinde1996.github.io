@@ -76,42 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // --- Cursor Effects (Golden Line Trail & Bubbles) ---
-    const createLineAndBubble = (e) => {
-        // Golden Line
-        const line = document.createElement('div');
-        line.className = 'golden-line';
-        line.style.left = `${e.clientX - 50}px`; // Center the line
-        line.style.top = `${e.clientY - 1}px`;
-        document.body.appendChild(line);
-
-        setTimeout(() => {
-            line.remove();
-        }, 500); // Should match the animation duration
-
-        // Bubble
-        if (Math.random() < 0.1) { // Spawn bubble ~10% of the time
-            const bubble = document.createElement('div');
-            bubble.className = 'bubble';
-            const size = Math.floor(Math.random() * 20) + 10;
-            bubble.style.width = `${size}px`;
-            bubble.style.height = `${size}px`;
-            bubble.style.left = `${e.clientX - size / 2}px`;
-            bubble.style.top = `${e.clientY - size / 2}px`;
-            document.body.appendChild(bubble);
-
-            bubble.addEventListener('animationend', () => {
-                bubble.remove();
-            });
-        }
-    };
 
     // Attach event listeners
     window.addEventListener('scroll', () => {
         updateActiveDotAndNav();
         checkReveal();
     });
-    window.addEventListener('mousemove', createLineAndBubble);
+
 
     // Initial calls on load
     updateActiveDotAndNav();
